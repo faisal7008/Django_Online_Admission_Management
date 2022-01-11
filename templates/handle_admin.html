@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %} Admin Panel {% endblock %}
+
+{% block style %}
+<style>
+.foo {
+    background: green;
+    text-decoration: none;
+    display: flex;
+    font-size: 25px;
+    color: aliceblue;
+    padding: 35px 40px;
+    height: 100px;
+    width: 200px;
+}  
+</style>
+{% endblock %}
+{% block body %}
+
+{% comment %} <div class="box">
+  <h2><a href="/users/"> All Users ({{users}}) </a></h2>
+</div>
+<div class="box">
+  <h2><a href="/approved_applications/"> Approved Applications ({{approve}}) </a></h2>
+</div>
+<div class="box">
+  <h2><a href="/pending_applications/"> Pending Applications ({{pending}}) </a></h2>
+</div>
+<div class="box">
+  <h2><a href="/rejected_applications/"> Rejected Applications ({{reject}}) </a></h2>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+  </div>
+</div> {% endcomment %}
+<div class="container my-5" style="width: 600px;">
+<!-- <a class="foo" href="www.google.com">www.google.com</a> -->
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-success position-absolute" onclick="document.location='/allusers/'" style="padding: 55px 70px; font-size: 20px;">
+        All Applications
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{users}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-success position-relative" onclick="document.location='/approved_users/'" style="padding: 40px 60px; font-size: 20px;">
+        Approved Applications
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{approve}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+    </div>
+  </div><br>
+  <div class="row">
+    <div class="col-md-6">
+      <button type="button" class="btn btn-success position-relative" onclick="document.location='/pending_users/'" style="padding: 40px 60px; font-size: 20px;">
+        Pending Applications
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{pending}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-success position-relative" onclick="document.location='/rejected_users/'" style="padding: 40px 60px; font-size: 20px;">
+        Rejected Applications
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{reject}}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

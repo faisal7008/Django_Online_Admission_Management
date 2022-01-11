@@ -1,0 +1,183 @@
+{% extends 'dashboard.html' %}
+
+{% block list4_active %} active {% endblock list4_active %}
+
+{% block Fee_payment %}
+
+{% block dash_style %}
+<style>
+    /* *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+    } */
+    
+    .container[id="fee"]{
+        width: 630px;
+        height: 430px;
+        background-color: rgb(165, 204, 238);
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        justify-content:space-around;
+        border-radius: 8px;
+        /* backdrop-filter: blur(5px);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3); */
+    }
+    
+    .container[id="fee"] h1{
+        text-align: center;
+        font-weight: 700;
+    }
+    
+    .first-row{
+         display: flex;
+    }
+    
+    .owner{
+        width: 100%;
+        margin-right: 40px;
+    }
+    
+    .input-field1 input{
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .selection{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .selection select{
+        padding: 8px 15px;
+    }
+    
+    a[id="fee1"]{
+        background-color: blueviolet;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 18px;
+        transition: 0.5s;
+    }
+    
+    a[id="fee1"]:hover{
+        background-color: dodgerblue;
+    }
+    
+    .cards img{
+        padding-bottom: 5px;
+        width: 90px;
+    }
+</style>
+{% endblock dash_style %}
+
+{% if user.application.user %}
+
+    {% if application.Application_Status == "Approved" %}
+    <div class="container" id="fee">
+        <h1>Confirm Your Payment</h1>
+        <div class="first-row">
+            <div class="owner">
+                <div class="input-field1">
+                    <input type="text" class="form-control" placeholder="Card Holder Name" required>
+                </div>
+            </div>
+            <div class="cvv">
+                <div class="input-field1">
+                    <input type="password" class="form-control" placeholder="CVV" required>
+                </div>
+            </div>
+        </div>
+        <div class="second-row">
+            <div class="card-number">
+                <div class="input-field1">
+                    <input type="text" class="form-control" placeholder="Card Number" required>
+                </div>
+            </div>
+        </div>
+        <div class="third-row">
+            <div class="selection">
+                <div class="date">
+                    <div class="row">
+                        <div class="col">
+                            <select name="months" id="months" class="form-select" style="margin-right: 12px;" required>
+                                <option value="" selected>MM</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="years" id="years" class="form-select" style="margin-right: 20px;" required>
+                                <option value="" selected>YYYY</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <img src="/media/mastercard.png" alt="">
+                    <img src="/media/rupay.png" alt="">
+                    <img src="/media/visa.png" alt="">
+                </div>
+            </div>    
+        </div>
+        <a id="fee1" href="">Confirm</a>
+    </div>
+    {% else %}
+    <div class="container">
+        <br><br><br><br><br><br><br>
+        <h1><center> You cannot pay the college yet as </center></h1>
+        <h1><center> Your Application is <strong> {{ application.Application_Status }} </strong></center></h1>
+        <br><br><br><br><br><br>
+    </div>
+    {% endif %}
+
+
+{% else %}
+    <div class="container">
+        <br><br><br><br><br><br><br><br>
+        <h1><center><strong> You have not filled the application yet. </strong></center></h1>
+        <center><strong><a href="/application_form/" style="font-size: large;">Click here</a></strong></center>
+        <br><br><br><br><br><br><br>
+    </div>
+{% endif %}
+
+
+
+
+{% endblock Fee_payment %}
+
+
+
+

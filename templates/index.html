@@ -1,0 +1,293 @@
+{% extends 'base.html' %}
+
+{% block home %}active{% endblock home %}      <!-- shows which bar is active -->
+
+{% block title %}Home{% endblock title %}
+
+{% block style %}
+<style>
+    @keyframes updown{
+        from{
+            transform: translateY(10px);
+        }
+        to{
+            transform: translateY(-10px);
+        }
+
+    }
+    .container .login_here{
+        color: #04AA6D;
+        cursor: pointer;
+    }
+    .container .login_here .headline .fa{
+        color: #04AA6D;
+        font-size: 48px;
+    }
+    .hand{
+        animation: updown 0.8s infinite;
+        animation-timing-function: ease-in-out;
+
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+
+
+<main id="main" style="align-content: center;">
+     <div class="container my-4">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+          </div>
+          <div class="carousel-inner" style="box-shadow:0 0.125rem 0.625rem rgba(63, 106, 216, 0.4), 0 0.0625rem 0.125rem rgba(63, 106, 216, 0.5)">
+            <div class="carousel-item active">
+              <img src="/media/CBIT-Hyderabad.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <!-- <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p> -->
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="/media/RANKING.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <!-- <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p> -->
+              </div>
+            </div>
+            <!-- <div class="carousel-item">
+              <img src="https://source.unsplash.com/1600x700/?university" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                 <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p> 
+              </div>
+            </div> -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    </div>
+
+	<div class="container cus-headline">
+                <!--start code-->
+       <div class="mb-1 py-1">
+           <div class="col-12 py-1 bg-light" style="box-shadow:0 0.125rem 0.625rem rgba(63, 106, 216, 0.4), 0 0.0625rem 0.125rem rgba(63, 106, 216, 0.5)">
+               <div class="row">
+                   <!--Breaking box-->
+                   <div class="col-md-3 col-lg-2 pr-md-0" style="margin-top:5px;">
+                       <div class="p-3 bg-primary text-white text-center "><span class="font-weight-bold"><span class="english">Latest News</span></div>
+                   </div>
+                   <!--end breaking box-->
+                   <!--Breaking content-->
+                   <div class="col-md-9 col-lg-10 pl-md-4 py-2">
+                       <div class="breaking-box">
+                           <div id="carouselbreaking" class="carousel slide" data-ride="carousel">
+                               <!--breaking news-->
+                               <div class="carousel-inner">
+                                <a style="color: #f00;font-weight:800;font-size: 14px;">
+                                    <marquee behavior="" direction=""> 1. Last date for fresh registration towards UG Admissions extended upto 25.10.2021 (5 p.m). </marquee><br>
+                                    <marquee behavior="" direction=""> 2. Last date for UG Open Physical Counselling extended upto 27.10.2021 (12 midnight) </marquee><br>
+                                </a>
+                                  
+                                   <!--<div class="carousel-item">
+                                    <a style="color: #f00;font-weight:800;font-size: 1rem;" href="javascript:void(0);">Merit list for UG Admissions is out. Students are advised to check their results  from Student Login or "Know Your Result" link on homepage or contact college for merit list. </a>
+                                   </div>-->
+                                  
+                               </div>
+                               <!--end breaking news-->
+                           </div>
+                       </div>
+                   </div>
+                   <!--end breaking content-->
+               </div>
+           </div>
+       </div>
+       <!--end code-->
+           </div>
+        <!-- ======= About Section ======= -->
+        {% if not user.is_authenticated %}
+        <div class="container">
+            <br>
+            <h1 class="login_here" align="center">
+                Login to Fill the Application Form 
+                <span class="headline headline--jump">
+                <i class="fa fa-hand-pointer-o hand"></i> 
+                </span>
+            </h1>       
+            <br>
+        </div>
+        {% endif %}
+
+       
+        <section id="topbar" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row content" style="width: fit-content;">
+                    <div class="col-lg-6 clearfix">
+                        <div class="cus-important" style="margin-top: 1.5rem;">
+                            <div data-aos="zoom-in" data-aos-delay="100" class="aos-init aos-animate">  
+                                    <div class="card cus-admission" style="min-height: auto;">
+                                        <div class="card-header">
+                                        <h5 style="font-size: 24px;"><span class="english">Admission Schedule for Under Graduate (UG)</span></h5>
+                                        </div>
+                                        <div class="card-body table-responsive" style="padding:0;font-size:14px;">
+                                            <table class="table table-bordered table-hover table-striped table-styling">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Sr No.</th>
+                                                        <th scope="col">Title</th>
+                                                        <th scope="col">Date/Timelines</th>
+                                                    </tr>
+                                                </thead>
+                                               
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Online Registration and Submission of Application by Applicants on Online Admission Portal </td>
+                                                        <td>16th August 2021 to 6th September 2021</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Online Documents Verification</td>
+                                                        <td>18th August 2021 to 8th September 2021</td>
+
+                                                    </tr>
+                                                    <!--<tr>
+                                                        <th scope="row">3</th>
+                                                        <td>1st Merit List Preparation</td>
+                                                        <td>23rd August 2021 to 24th August 2021</td>
+                                                    </tr>-->
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>1st Merit List Out (Valid upto 20th September 2021)</td>
+                                                        <td>12th September 2021</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>Fee Submission (1st Merit List)</td>
+                                                        <td>Upto 20th September 2021 (5:00 P.M)</td>
+                                                    </tr>
+                                                    <!--<tr>
+                                                        <th scope="row">6</th>
+                                                        <td>Preparation of 2nd Merit  List</td>
+                                                        <td>29th August 2021</td>
+                                                    </tr>-->
+                                                    <tr>
+                                                        <th scope="row">5</th>
+                                                        <td>2nd Merit List Out (Valid upto 25 September 2021)</td>
+                                                        <td>22nd September 2021</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">6</th>
+                                                        <td>Fee Submission (2nd Merit List) </td>
+                                                        <td>22nd September 2021 to 25th September 2021</td>
+                                                    </tr>
+                                                    <!--<tr>
+                                                        <th scope="row">9</th>
+                                                        <td>Teaching Term  </td>
+                                                        <td>w.e.f 1st September 2021 </td>
+
+                                                    </tr>-->
+                                                    <tr>
+                                                        <th scope="row">7</th>
+                                                        <td>Re-opening of Admission Portal for Registration towards Open Counselling for leftover seats</td>
+                                                        <td>28th September 2021</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                       </div>
+                    <div class="col-lg-6 clearfix cus-test" style="padding:0;">
+					   <!--<p class="main-text" style="text-align:center;color:#f00;margin-top:4rem;font-size:24px;font-weigh:600;">Admission Schedule will be Displayed Shortly</p>
+					   <p class="second-text" style="text-align:center;color:#f00;font-size:16px;">Registration for UG Admissions 2021-22 is not open yet. Admission seekers are advised not to register till admission schedule is displayed here.</p>-->
+                       <div class="col-lg-10 clearfix">
+                        <!-- <div data-aos="zoom-in" data-aos-delay="100" class="aos-init aos-animate">
+                            <div class="card cus-upper">
+                               <div class="card-header">
+                                <h5 style="font-size: 24px;"><span class="english">Online Admission 2021-22 for Post Graduate (PG)</span><span class="hindi" style="display:none;">स्नातकोत्तर (पी.जी.) के लिए ऑनलाइन एडमिशन 2021-22</span></h5>
+                               
+							   </div>
+                               <div class="card-body text-center ">
+							   <p style="color: rgb(255, 0, 0); font-size: 14px;"><strong>Merit list of PG avaliable on the portal. Candidates can check their status from <span style="color:#213F71">"Know Your Result"</span>. Candidates are advised to make their fee online or college counter.</strong></p>
+                                <div class="cta">
+								
+                              
+                                  </div>
+
+                                </div> 
+                            </div>
+                        </div>  -->
+                        <div class="cus-important" style="margin-top: 1.5rem;">
+                            <div data-aos="zoom-in" data-aos-delay="100" class="aos-init aos-animate">  
+                                    <div class="card cus-admission" style="min-height: auto;">
+                                        <div class="card-header">
+                                        <h5 style="font-size: 24px;">Quick Links</h5>
+                                        </div>
+                                        <div class="card-body table-responsive" style="padding: 0; margin-bottom: 10px;font-size:16px; ">
+                                            <br>
+                                            <ul style="margin-left: 10px; list-style-type: square;">
+                                                <li>
+                                                    <a href="https://www.cbit.ac.in/wp-content/uploads/2021/11/ADMISSIONS-GUIDELINES-2021-22-with-Fee-Notice-Updated.pdf" target="_blank">Admission Guidelines</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.cbit.ac.in/wp-content/uploads/2021/08/AdmissionProcedure-2021-22-..pdf" target="_blank">Eligibility Criteria</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.cbit.ac.in/admission_post/ug-pg-course-list/" target="_blank">Courses Offered</a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.cbit.ac.in/wp-content/uploads/2021/04/EAMCET-2020-21-Admission-Ranks.pdf" target="_blank">Previous Year Cutoffs</a>
+                                                </li>
+                                            </ul>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="cus-important" style="margin-top: 1.5rem;">
+                            <div data-aos="zoom-in" data-aos-delay="100" class="aos-init aos-animate">  
+                                    <div class="card cus-admission" style="min-height: auto;">
+                                        <div class="card-header">
+                                        <h5 style="font-size: 24px;">College Contact Info</h5>
+                                        </div>
+                                        <div class="card-body table-responsive" style="padding:0;margin-left: 30px; margin-top: 2px; font-size:16px; ">
+                                            <img src="/media/cbit-hyd.png" alt="..." width="300px">
+                                            <br>
+                                            <p>Gandipet, Hyderabad, Telangana,<br>
+                                                PIN : 500075<br>
+                                                Phone: 040-24193276<br>
+                                                Mobile: 8466997201<br>
+                                                For Admissions Enquiry: 8466997216<br>
+                                                Email: principal@cbit.ac.in</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                       </div>
+                    
+                      
+                       </div>
+                    </div>
+                   
+        </div></section><!-- End About Section -->
+    </main>
+</div>
+<br>
+{% endblock body %}
+

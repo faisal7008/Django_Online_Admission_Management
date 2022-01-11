@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block style %}
+<style>
+    .container[id="dashboard"]{
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+        width: 100%;
+        min-height: 500px;
+        background-color: white;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    } 
+    :root{
+        --blue: #287bff;
+        --white: #fff;
+        --grey: #f5f5f5;
+        --black1: #222;
+        --black2: #999;
+    }
+    .container[id="dashboard"] .navigation{
+        position: fixed;
+        width: 280px;
+        height: 100.4%;
+        /* border: 1px solid #222; */
+        margin-left: -13px;
+        margin-top: -1px;
+        background: var(--blue);
+        border-left: 0px solid var(--blue);
+        transition: 0.5s;
+        overflow: hidden;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .container[id="dashboard"] .navigation ul{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .container[id="dashboard"] .navigation ul li{
+        position: relative;
+        width: 100%;
+        list-style: none;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    /* .container[id="dashboard"] .navigation ul li:hover, */
+    .container[id="dashboard"] .navigation ul li.active{
+        background: var(--white);
+    }
+    .container[id="dashboard"] .navigation ul li:nth-child(1){
+        margin-bottom: 40px;
+        pointer-events: none;
+    }
+    .container[id="dashboard"] .navigation ul li a{
+        position: relative;
+        display: block;
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        color: var(--white);
+    }
+    .container[id="dashboard"] .navigation ul li a .title{
+        font-weight: 400;
+    }
+    /* .container[id="dashboard"] .navigation ul li:hover a, */
+    .container[id="dashboard"] .navigation ul li.active a{
+        color: var(--blue);
+    }
+    .container[id="dashboard"] .navigation ul li a .title{
+        position: relative;
+        display: block;
+        padding: 0 20px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    /* curve outside */
+    /* .container[id="dashboard"] .navigation ul li:hover a::before, */
+    .container[id="dashboard"] .navigation ul li.active a::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -50px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 35px 35px 0 10px var(--white);
+        pointer-events: none;
+    }
+    /* .container[id="dashboard"] .navigation ul li:hover a::after, */
+    .container[id="dashboard"] .navigation ul li.active a::after{
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -50px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 35px -35px 0 10px var(--white);
+        pointer-events: none;
+    }
+    .container[id="dashboard"] .main{
+        position: relative;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        margin-left: 290px; 
+        margin-right: 10px; 
+        padding: 10px 20px;
+        border: 1px solid #222;
+        box-sizing: content-box;
+    }
+</style>
+{% block dash_style %}{% endblock dash_style %}
+
+{% endblock style %}
+
+{% block body %}
+<div class="container" id="dashboard">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="title" style="font-size: 28px; font-weight: 600; letter-spacing: 0.8px;">Dashboard</span>
+                </a>
+            </li>
+            <li class="{% block list1_active %}{% endblock list1_active %}">
+                <a href="/dashboard/personal_details">
+                    <span class="title">Personal Details</span>
+                </a>
+            </li>
+            <li class="{% block list2_active %}{% endblock list2_active %}">
+                <a href="/dashboard/educational_details">
+                    <span class="title">Educational Details</span>
+                </a>
+            </li>
+            <li class="{% block list3_active %}{% endblock list3_active %}">
+                <a href="/dashboard/status">
+                    <span class="title">Application Status</span>
+                </a>
+            </li>
+            <li class="{% block list4_active %}{% endblock list4_active %}">
+                <a href="/dashboard/fee_payment">
+                    <span class="title">Fee Payment</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- main -->
+    <div class="main">
+        {% block Personal_details %}{% endblock Personal_details %}
+        {% block Educational_details %}{% endblock Educational_details %}
+        {% block Fee_payment %}{% endblock Fee_payment %}
+        {% block Application_status %}{% endblock Application_status %}
+    </div>
+    
+
+</div>
+
+<br>
+
+<script>
+    //add hovered class in selected list item
+    // let list = document.querySelectorAll('.container[id="dashboard"] .navigation li');
+    // function activeLink() {
+    //     list.forEach((item) =>
+    //     item.classList.remove('active'));
+    //     this.classList.add('active');
+    // }
+    // list.forEach((item) =>
+    // item.addEventListener('click', activeLink));
+
+    // add active class in selected list item
+    // const list = document.querySelectorAll('.container[id="dashboard"] .navigation li');
+    // function activeLink() {
+    //     list.forEach((item) =>
+    //     item.classList.remove('active'));
+    //     this.classList.add('active');
+    // }
+    // list.forEach((item) =>
+    // item.addEventListener('click', activeLink));
+</script>
+
+{% endblock body %}

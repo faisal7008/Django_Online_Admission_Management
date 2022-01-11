@@ -1,0 +1,94 @@
+{% extends 'dashboard.html' %}
+
+{% block list1_active %} active {% endblock list1_active %}
+
+{% block Personal_details %}
+
+{% if user.application.user %}
+    
+<h3>Personal Details</h3><hr>
+  <div class="photo" style="margin-left: 600px; padding-right: 10px; margin-bottom: -235px;">
+    <div class="img">
+        <p align="end"><img src="{{application.student_profile.url}}" height="193px" width="150px" alt="img" style="border: 2px solid #555;"></p>
+      </div><br>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+        <label for="course" class="form-label">Application ID :</label>
+      </div>
+      <div class="col-md-8">
+        <p style="font-size: large;"><strong>{{id}}</strong></p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <label for="course" class="form-label">Course :</label>
+    </div>
+    <div class="col-md-5">
+      <p>{{application.course}}</p>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+          <label for="name" class="form-label">Name :</label>
+      </div>
+      <div class="col-md-3">
+          <p>{{application.name}}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+          <label for="flexRadioDefault" class="form-label">Gender :</label>
+      </div>
+      <div class="col-md-3">
+          <p>{{application.gender}}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+          <label for="DOB" class="form-label">Date of Birth :</label>
+      </div>
+      <div class="col-md-3">
+          <p>{{application.DOB}}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+          <label for="email" class="form-label">Email :</label>
+      </div>
+      <div class="col-md-3">
+          <p>{{application.email}}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+          <label for="phone" class="form-label">Phone Number :</label>
+      </div>
+      <div class="col-md-3">
+          <p>{{application.phone}}</p>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+          <label for="address" class="form-label">Address :</label>
+      </div>
+      <div class="col-md-3">
+          <p>{{application.address}}</p>
+      </div>
+  </div>
+
+
+{% else %}
+    <div class="container">
+        <br><br><br><br><br><br><br><br>
+        <h1><center><strong> You have not filled the application yet. </strong></center></h1>
+        <center><strong><a href="/application_form/" style="font-size: large;">Click here</a></strong></center>
+        <br><br><br><br><br><br><br>
+    </div>
+{% endif %}
+
+{% endblock Personal_details %}
+
+
+
+

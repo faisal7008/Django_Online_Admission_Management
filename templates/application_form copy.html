@@ -1,0 +1,442 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Form{% endblock title %}
+
+{% block style %}
+    <style>
+        .container{
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 45px;
+            padding-bottom: 15px;
+            position: relative;
+            width: 1000px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+        .buttons{
+            padding-left: 435px;
+            letter-spacing: 1px;
+        }
+        .buttons button{
+            letter-spacing: 0.6px;
+        }
+    </style>
+{% endblock style %}
+
+{% block application_form %} active {% endblock %}
+
+{% block body %}
+
+{% if not user.application.user %}
+
+<div class="container" style="border: 1px solid black; background-color: white; border-radius: 15px;">
+    <form action="/application_form" method="post" enctype="multipart/form-data" onSubmit="if(!confirm('Are you sure you want to submit the form?')){return false;}" id='myfrm'>
+    {% csrf_token %}
+    <h1 class="text-center">Fill Your Application Here</h1>
+    <div class="container mt-4">
+        <h3>Personal Details</h3>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <label for="course" class="form-label">Course :</label>
+          </div>
+          <div class="col-md-6">
+            <select class="form-control" name="course" id="course" required>
+                <option disabled="disabled" selected="selected"> Choose Your Course </option>
+                <option>Computer Science Engineering</option>
+                <option>Information Technology</option>
+                <option>Electronics and Communication Engineering</option>
+                <option>Electrical and Electronics Engineering</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Chemical Engineering</option>
+                <option>Biotechnology</option>
+            </select>
+          </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="name" class="form-label">Name :</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" required>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="flexRadioDefault" class="form-label">Gender :</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Male" required>
+                <label class="form-check-label" for="gender"> Male</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Female" required>
+                <label class="form-check-label" for="gender"> Female</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-check-input" type="radio" name="gender" id="gender" value="Other" required>
+                <label class="form-check-label" for="gender"> Other</label>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="DOB" class="form-label">Date of Birth :</label>
+            </div>
+            <div class="col-md-6">
+                <input type="date" class="form-control" id="DOB" name="DOB" required>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="student_profile" class="form-label">Upload Your Passport Size Photo :</label>
+            </div>
+            <div class="col-md-6">
+                <input type="file" class="form-control" name="student_profile" id="student_profile" required>
+            </div>
+            </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="email" class="form-label">Email :</label>
+            </div>
+            <div class="col-md-6">
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="phone" class="form-label">Phone Number :</label>
+            </div>
+            <div class="col-md-1">
+                <input type="code" class="form-control" name="code" id="code" required>
+            </div>
+            <div class="col-md-5">
+                <input type="phone" class="form-control" id="phone" name="phone" required>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="address" class="form-label">Address :</label>
+            </div>
+            <div class="col-md-6">
+                <textarea class="form-control" id="address" name="address" rows="6" required></textarea>
+            </div>
+        </div><br>
+    </div>
+
+    <div class="container mt-4">
+        <h3>Educational Details</h3>
+        <hr>
+            <h5>SSC</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ssc_score" class="form-label">SSC GPA/Percentage :</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="ssc_score" id="ssc_score" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ssc_memo" class="form-label">SSC Marksheet :</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" class="form-control" name="ssc_memo" id="ssc_memo" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ssc_tc" class="form-label">SSC Transfer Certificate :</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" class="form-control" name="ssc_tc" id="ssc_tc" required>
+                </div>
+            </div><br> 
+            <hr>
+            <h5>INTERMEDIATE</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inter_score" class="form-label">Inter Percentage :</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="inter_score" id="inter_score" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inter_memo" class="form-label">Inter Marksheet :</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" class="form-control" name="inter_memo" id="inter_memo" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inter_tc" class="form-label">Inter Transfer Certificate :</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" class="form-control" name="inter_tc" id="inter_tc" required>
+                </div>
+            </div><br>
+    </div>
+
+    <div class="container mt-4">    
+            <hr>
+            <h5>EAMCET</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="eamcet_score" class="form-label">EAMCET Rank :</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="eamcet_score" id="eamcet_score" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="eamcet_memo" class="form-label">EAMCET Scorecard :</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" class="form-control" name="eamcet_memo" id="eamcet_memo" required>
+                </div>
+            </div><br>
+            <hr>
+            <h5>JEE</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="jee_score" class="form-label">JEE Percentile</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" name="jee_score" id="jee_score" required>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="jee_memo" class="form-label">JEE Scorecard :</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" class="form-control" name="jee_memo" id="jee_memo" required>
+                </div>
+            </div><br>
+    
+            <hr>
+    </div>
+    
+    <!-- <div class="container mt-2">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+            <label class="form-check-label" for="flexCheckDefault"> I agree that all the given information is true and if any information is provided false then i am responsible for my rejection</label>
+          </div><br> -->
+    <div class="buttons"> 
+        <!-- <button class="btn btn-primary" type="button">save</button> &nbsp; -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="button" onclick="myPrint('myfrm')">Print</button>
+        {% comment %} <p align="center"><input type="button" onclick="myPrint('myfrm')" value="print"></p> {% endcomment %}
+    <script>
+        function myPrint(myfrm) {
+            var printdata = document.getElementById(myfrm);
+            newwin = window.open("");
+            newwin.document.write(printdata.outerHTML);
+            newwin.print();
+            newwin.close();
+        }
+    </script>
+    </form>
+    </div>
+    </div>
+    <br>
+</div>
+<br>
+
+{% endif %}
+
+{% if user.application.user %}
+
+<div class="container mt-4">
+        <h3>Personal Details</h3>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <label for="course" class="form-label">Course :</label>
+          </div>
+          <div class="col-md-6">
+            <p>{{user.application.course}}</p>
+          </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="name" class="form-label">Name :</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{user.application.name}}</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="flexRadioDefault" class="form-label">Gender :</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{user.application.gender}}</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="DOB" class="form-label">Date of Birth :</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{user.application.DOB}}</p>
+            </div>
+        </div><br>
+        {% comment %} <div class="row">
+            <div class="col-md-3">
+                <label for="student_profile" class="form-label">Upload Your Passport Size Photo :</label>
+            </div>
+            <div class="col-md-6">
+                <input type="file" class="form-control" name="student_profile" id="student_profile" required>
+            </div>
+            </div><br> {% endcomment %}
+        <div class="row">
+            <div class="col-md-3">
+                <label for="email" class="form-label">Email :</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{user.application.email}}</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="phone" class="form-label">Phone Number :</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{user.application.phone}}</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="address" class="form-label">Address :</label>
+            </div>
+            <div class="col-md-6">
+                <p>{{user.application.address}}</p>
+            </div>
+        </div><br>
+    </div>
+
+    <div class="container mt-4">
+        <h3>Educational Details</h3>
+        <hr>
+            <h5>SSC</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ssc_score" class="form-label">SSC GPA/Percentage :</label>
+                </div>
+                <div class="col-md-2">
+                    <p>{{user.application.ssc_score}}</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ssc_memo" class="form-label">SSC Marksheet :</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{user.application.ssc_memo.url}}</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ssc_tc" class="form-label">SSC Transfer Certificate :</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{user.application.ssc_tc.url}}</p>
+                </div>
+            </div><br> 
+            <hr>
+            <h5>INTERMEDIATE</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inter_score" class="form-label">Inter Percentage :</label>
+                </div>
+                <div class="col-md-2">
+                    <p>{{user.application.inter_score}}</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inter_memo" class="form-label">Inter Marksheet :</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{user.application.inter_memo.url}}</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inter_tc" class="form-label">Inter Transfer Certificate :</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{user.application.inter_tc.url}}</p>
+                </div>
+            </div><br>
+    </div>
+
+    <div class="container mt-4">    
+            <hr>
+            <h5>EAMCET</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="eamcet_score" class="form-label">EAMCET Rank :</label>
+                </div>
+                <div class="col-md-2">
+                    <p>{{user.application.eamcet_score}}</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="eamcet_memo" class="form-label">EAMCET Scorecard :</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{user.application.eamcet_memo.url}}</p>
+                </div>
+            </div><br>
+            <hr>
+            <h5>JEE</h5>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="jee_score" class="form-label">JEE Percentile</label>
+                </div>
+                <div class="col-md-2">
+                    <p>{{user.application.jee_score}}</p>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="jee_memo" class="form-label">JEE Scorecard :</label>
+                </div>
+                <div class="col-md-6">
+                    <p>{{user.application.jee_memo.url}}</p>
+                </div>
+            </div><br>
+    
+            <hr>
+    </div>
+
+
+{% comment %} <div class="container">
+    <br><br><br><br>
+    <h1><center><strong> You have already filled the Application. </strong></center></h1>
+    <br><br><br><br><br><br>    
+</div> {% endcomment %}
+
+{% endif %}
+
+{% endblock body %}

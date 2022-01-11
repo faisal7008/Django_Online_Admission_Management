@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Notifications{% endblock title %}
+
+{% block style %}
+<style>
+  .container[id="notify"]{
+    width: 1000px;
+    min-height: 340px;
+    background-color: #fff;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "Open Sans", sans-serif;
+  }  
+</style>
+
+{% endblock style %}
+
+{% block body %}
+
+<div class="container" id="notify">
+  <div style="margin-left: 10px; margin-right: 10px;">
+    <br>
+    <h3 style="font-weight: 700; letter-spacing: 0.8px;"><span style="font-weight: 900; color: coral; font-size: 35px;">|</span> Notifications</h3><hr>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>{{ message }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+<br>
+
+
+{% endblock body %}
+
+
+
+

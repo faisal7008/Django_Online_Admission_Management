@@ -1,0 +1,32 @@
+{% extends 'dashboard.html' %}
+
+{% block list3_active %} active {% endblock list3_active %}
+
+{% block Application_status %}
+
+{% if user.application.user %}
+    <div class="container">
+        <br><br><br><br><br><br>
+        <h1><center><strong> Your Application is {{ application.Application_Status }} </strong></center></h1>
+        <h2><center>Your Application ID : {{ id }}</center></h2>
+        <h5><center>{{application.message}}</center></h5>
+        {% if application.Application_Status == "Approved" %}
+        <center><h3>You can now pay College fee <strong><a href="/dashboard/fee_payment/"> Pay Now</a></strong></h3></center>
+        {% endif %}
+        <br><br><br><br><br><br>
+    </div>
+{% else %}
+    <div class="container">
+        <br><br><br><br><br><br><br><br>
+        <h1><center><strong> You have not filled the application yet. </strong></center></h1>
+        <center><strong><a href="/application_form/" style="font-size: large;">Click here</a></strong></center>
+        <br><br><br><br><br><br><br>
+    </div>
+{% endif %}
+
+
+{% endblock Application_status %}
+
+
+
+

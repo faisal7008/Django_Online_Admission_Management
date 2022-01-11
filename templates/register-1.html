@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://icon-library.com/images/scholar-icon/scholar-icon-11.jpg" type="image/x-icon">
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
+    body{
+      overflow: hidden;
+    }
+    section{
+      padding-top: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: coral;
+    }
+    .box{
+      position: relative;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    }
+    .container{
+      position: relative;
+      width: 530px;
+      min-height: 450px;
+      background-color: rgb(211, 229, 243);
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    
+    }
+    .form{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    .form h2{
+      position: relative;
+      color: black;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      margin-left: 80px; 
+      padding-left: 121px;
+      padding-top: 25px;   
+    }
+    .form .inputbox{
+      width: 100%;
+      margin-top: 20px;
+      padding-left: 55px;
+
+    }
+    .form .inputbox input{
+      border: none;
+      outline: none;
+      padding: 10px 30px;
+      border-radius: 35px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form .inputbox .form-label{
+    margin-left: auto;
+    padding-right: 90px;
+    }
+    .form .inputbox .form-label1{
+    margin-left: auto;
+    padding-right: 62px;
+    }
+    .form .inputbox .form-label2{
+    margin-left: auto;
+    padding-right: 98px;
+    }
+    .form .inputbox .form-label3{
+    margin-left: auto;
+    padding-right: 30px;
+    }
+    .form .inputbox1{
+      width: 100%;
+      margin-top: 30px;
+      padding-left: 75px;
+    }
+    .form .alert1{
+      width: 100%;
+      margin-left: 170px;
+      margin-bottom: -23px;
+      padding-top: 5px;
+      color: red;
+    }
+    .form .inputbox1 input{
+      border: none;
+      outline: none;
+      padding: 10px 108px 10px 50px ;
+      border-radius: 100px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    .form .inputbox1 input[type="submit"]{
+      max-width: 100px;
+      background-color: rgb(79, 201, 79);
+      cursor: pointer;
+      margin-bottom: 5px;
+      font-weight: 600;
+      margin-left: 110px;
+    }
+  </style>
+  <title>Student Registration</title>
+</head>
+<body>
+<section>
+<div class="box">
+<div class="container">
+<div class="form">
+   <h2>Register</h2>
+<form action="/register/" method="post"> 
+    {% csrf_token %}
+    <div class="container mt-3">
+        <div class="inputbox">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="inputbox">
+            <label for="first_nam" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name">
+        </div>
+        <div class="inputbox">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+        </div>
+        <div class="inputbox">
+            <label for="email" class="form-label1">Email address</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="inputbox">
+            <label for="password1" class="form-label2">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1">
+        </div>
+        <div class="inputbox">
+            <label for="password2" class="form-label3">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2">
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert1">
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              {{ message }}
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        <div class="inputbox1">
+            <input type="submit" value="Submit">
+          </div>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</body>

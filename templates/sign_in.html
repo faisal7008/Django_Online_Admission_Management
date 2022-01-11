@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Box Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="shortcut icon" href="https://icon-library.com/images/scholar-icon/scholar-icon-11.jpg" type="image/x-icon">
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+    *{                /* https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900 */
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body{
+      overflow: hidden;
+      background-color: aliceblue;
+    }
+    section{
+      padding-top: auto;
+      display: block;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .box{
+      position: relative;
+      padding-top: 30px;
+    }
+    .container{
+      position: relative;
+      width: 810px;
+      min-height: 100px;
+      background-color:  rgb(170, 221, 223);     /*rgb(244, 142, 247);*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    /* .icon .scholar-icon{
+      width: 35px;
+      height: 35px;
+      margin-left: 140px;
+    } */
+    .form{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+    }
+    .form h2{
+      position: relative;
+      color: #27ae60;
+      font-size: 35px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 4px solid #607d8b;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      display: inline-block;
+    }
+    .form .inputbox{
+      width: 100%;
+      margin-top: 20px;
+    }
+    .form .alert1{
+      width: 100%;
+      margin-top: -11px;
+      margin-left: 66px;
+      margin-bottom: -47px;
+      font-weight: bold;
+      color: rgb(228, 42, 42);
+    }
+    .form .inputbox input{
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: snow;
+      padding: 10px 20px;
+      border-radius: 35px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .form .inputbox input[type="submit"]{
+      max-width: 100%;
+      /*background-color: #f4511e;/*rgb(8, 6, 6);*/
+      background: #2ecc71;
+      color: #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      /*color: /*rgba(255, 255, 255, 0.6); aliceblue;*/
+      margin-top: 35px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      /*margin-left: 110px;*/
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+    .form .inputbox input[type="submit"]:hover{
+      /* background-color: rgba(0, 0, 0, 0.9); */
+      background: #27ae60;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+      /* color: rgb(170, 221, 223); */
+      opacity: 1;
+      /* border: 0.1px solid rgba(255, 255, 255, 0.1); */
+    }
+    .forget{
+      margin-top: -10px;
+      margin-left: 5px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .forget a{
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        align-content: center;
+      }
+      .box{
+        position: absolute;
+        margin: auto;
+        justify-content: center;
+        align-content: center;
+      }
+      .container{
+        position: relative;
+        background-color: rgb(170, 221, 223);
+        display: flex;
+        width: fit-content;
+      }
+      .form{
+        padding: auto;
+        width: max-content;
+      }
+      .image{
+        width: 0;
+        visibility: hidden;
+      }
+      .box .close-button{
+        padding-right: 0px;
+      }
+    }
+    
+  </style>
+  <title>Login</title>
+</head>
+<header>
+</header>
+<body>
+  
+  <!-- <button type="button" class="btn btn-success"><a href="/"><img src="/media/back.png" width="23px" alt="Avatar" class="avatar"> Go To Homepage</a></button> -->
+  <section>
+    <nav aria-label="breadcrumb" style="padding-left: 10px; padding-top: 10px;">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Login</li>
+      </ol>
+    </nav>
+    <div class="box">
+      <p align="end" class="close-button" style="padding-right: 280px; padding-bottom: 8px; margin-bottom: 2px;"><button type="button" onclick="home()" class="btn-close" aria-label="Close"></button></p>
+      <script>
+        function home() {
+          window.location.href = '/';
+        }
+      </script>
+      <div class="container bg-blue">
+        <div class="image">
+            <img src="/media/log.svg" alt="img" width="380px">
+        </div>
+        <div class="form">
+          <h2>Login</h2>
+          <form action="/sign_in/" method="post">
+          {% csrf_token %}
+            <div class="inputbox">
+              <input type="username" class="form-control" name="username" id="username" placeholder="Username" required>
+            </div>
+            <div class="inputbox">
+              <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert1">
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              <small> *{{ message }} </small>
+            </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="inputbox">
+              <input type="submit" class="form-control" value="Login">
+            </div>
+            <p class="forget">Forgot Password ? <a href="#">Click Here</a></p>
+            <p class="forget">Didn't Register Yet ? <a href="/register">Register</a></p>
+          </form>
+        </div>
+      </div>
+      <div class="main mt-1">
+        <center><span class="text-muted"><small> © 2021 Site built by Faisal & Aquib </small></span></center>
+      </div>    
+    </div>
+    
+  </section>
+<!-- For icons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+</body>
+
+</html>

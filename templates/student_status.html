@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Status{% endblock title %}
+
+{% block body %}
+
+<div class="container" style="width: 850px;">
+  {% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+<div class="container" style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); background-color: #fff; border-radius: 15px; width: 850px;">
+    
+    <h2 class="text-center" style="margin-top: 10px;">Edit the Application Status</h2><hr>
+    <div class="container mt-3" >
+        <div class="row">
+          <div class="col-md-3">
+            <label for="id" class="form-label">Application ID :</label>
+          </div>
+          <div class="col-md-6">
+            <p>{{id}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label for="name" class="form-label">Applicant Name :</label>
+          </div>
+          <div class="col-md-6">
+            <p>{{name}}</p>
+          </div>
+        </div>
+      <form method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-3">
+            <label for="status" class="form-label">Application Status :</label>
+          </div>
+          <div class="col-md-6">
+            <select class="form-control" name="status" id="status" required>
+                <option value=""> --status-- </option>
+                <option value="Approved">Approved</option>
+                <option value="Pending">Pending</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+        </div><br>
+    </div>
+    <p align="center"><button class="btn btn-warning" style="letter-spacing: 0.6px;" type="submit">Submit</button></p>
+    </form>
+</div><br><br><br>  
+
+<script>
+  function check()
+  {
+      var f = document.getElementById("frm");
+      f.setAttribute('method',"post");
+      if(confirm('Do you want to see PF share?'))
+      {
+
+          f.setAttribute('action',"yourpage.php");
+      }
+      else
+      {   
+
+          f.setAttribute('action',"yourANOTHERpage.php");
+      }
+      return true;
+  }
+</script>
+
+{% endblock body %}
+
+
