@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
+import dj_database_url
 #from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,7 +42,7 @@ EMAIL_HOST_PASSWORD = 'cbit@1979'
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',    # Added manually
     'home.apps.HomeConfig',         # Added manually
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,7 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # Added manually
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -94,7 +95,7 @@ DATABASES = {
 }
 
 
-WHITENOISE_USE_FINDERS = True
+WHITENOISE_USE_FINDERS = True       # Added manually
 
 
 # Password validation
@@ -133,8 +134,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'home/staticfiles'
-STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'home/staticfiles'         # Added manually
+STATIC_URL = '/static/'                             # Added manually
 
 #Added Manually
 # STATICFILES_DIRS = [
@@ -143,11 +144,14 @@ STATIC_URL = '/static/'
 
 # Managing media
 MEDIA_ROOT = BASE_DIR / 'media'        # Added Manually
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'                   # Added manually
 
-#DISABLE_COLLECTSTATIC=1
 
+#New start
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#New End
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
