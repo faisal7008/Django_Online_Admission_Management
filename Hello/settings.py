@@ -132,10 +132,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Added Manually
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static"
-# ]
-DISABLE_COLLECTSTATIC = 1
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 
 # Managing media
 MEDIA_ROOT = BASE_DIR / 'media'        # Added Manually
