@@ -41,6 +41,7 @@ EMAIL_HOST_PASSWORD = 'cbit@1979'
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'home.apps.HomeConfig',         # Added manually
     'django.contrib.admin',
     'django.contrib.auth',
@@ -92,6 +93,8 @@ DATABASES = {
     }
 }
 
+WHITENOISE_USE_FINDERS = True
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -140,6 +143,8 @@ STATIC_URL = '/static/'
 # Managing media
 MEDIA_ROOT = BASE_DIR / 'media'        # Added Manually
 MEDIA_URL = '/media/'
+
+DISABLE_COLLECTSTATIC=1
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
