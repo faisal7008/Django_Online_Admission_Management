@@ -135,6 +135,7 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static"
 # ]
+DISABLE_COLLECTSTATIC = 1
 
 # Managing media
 MEDIA_ROOT = BASE_DIR / 'media'        # Added Manually
