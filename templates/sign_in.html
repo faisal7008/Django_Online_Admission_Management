@@ -13,7 +13,8 @@
   <link rel="shortcut icon" href="https://icon-library.com/images/scholar-icon/scholar-icon-11.jpg" type="image/x-icon">
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
-    *{                /* https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900 */
+    /* https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900 */
+    *{                
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -36,7 +37,7 @@
     }
     .container{
       position: relative;
-      width: 810px;
+      width: 35%;
       min-height: 100px;
       background-color:  rgb(170, 221, 223);     /*rgb(244, 142, 247);*/
       display: flex;
@@ -56,7 +57,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      padding: 40px;
+      padding: 40px 10px;
     }
     .form h2{
       position: relative;
@@ -125,37 +126,40 @@
     .forget a{
       font-weight: 600;
     }
-    @media (max-width: 768px) {
-      * {
+    @media (max-width: 600px) {
+      *{                
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
+      }
+      body{
+        overflow: hidden;
+        background-color: aliceblue;
+      }
+      section{
+        padding-top: auto;
+        display: block;
         justify-content: center;
-        align-content: center;
+        align-items: center;
+        min-height: 100vh;
       }
       .box{
-        position: absolute;
-        margin: auto;
-        justify-content: center;
-        align-content: center;
+        position: relative;
+        padding-top: 30px;
       }
       .container{
         position: relative;
-        background-color: rgb(170, 221, 223);
+        width: 80%;
+        min-height: 100px;
+        background-color:  rgb(170, 221, 223);     /*rgb(244, 142, 247);*/
         display: flex;
-        width: fit-content;
-      }
-      .form{
-        padding: auto;
-        width: max-content;
-      }
-      .image{
-        width: 0;
-        visibility: hidden;
-      }
-      .box .close-button{
-        padding-right: 0px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
     }
     
@@ -182,9 +186,9 @@
         }
       </script>
       <div class="container bg-blue">
-        <div class="image">
+        <!-- <div class="image">
             <img src="/media/log.svg" alt="img" width="380px">
-        </div>
+        </div> -->
         <div class="form">
           <h2>Login</h2>
           <form action="/sign_in/" method="post">

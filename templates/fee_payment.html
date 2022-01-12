@@ -23,8 +23,8 @@
     } */
     
     .container[id="fee"]{
-        width: 630px;
-        height: 430px;
+        width: auto;
+        height: auto;
         background-color: rgb(165, 204, 238);
         display: flex;
         flex-direction: column;
@@ -91,7 +91,7 @@
 
     {% if application.Application_Status == "Approved" %}
     <div class="container" id="fee">
-        <h1>Confirm Your Payment</h1>
+        <h1>Confirm Your Payment</h1><br>
         <div class="first-row">
             <div class="owner">
                 <div class="input-field1">
@@ -103,14 +103,14 @@
                     <input type="password" class="form-control" placeholder="CVV" required>
                 </div>
             </div>
-        </div>
+        </div><br>
         <div class="second-row">
             <div class="card-number">
                 <div class="input-field1">
                     <input type="text" class="form-control" placeholder="Card Number" required>
                 </div>
             </div>
-        </div>
+        </div><br>
         <div class="third-row">
             <div class="selection">
                 <div class="date">
@@ -151,7 +151,7 @@
                     <img src="/media/visa.png" alt="">
                 </div>
             </div>    
-        </div>
+        </div><br>
         <a id="fee1" href="">Confirm</a>
     </div>
     {% else %}
