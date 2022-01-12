@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-6#)t1m1)+)l9b4c6+rhx-_q)v=28zr12!*^_40j&cvawy_=m1m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','online-admission-management.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','online-admission.herokuapp.com']
 
 
 # Email Sending
