@@ -27,21 +27,21 @@
     }
 
     section {
-      padding-top: auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      /* min-height: 100vh; */
+      /* border: 1px solid black; */
       background-color: aliceblue;
     }
 
     .box {
       position: relative;
-      /* display: flex; */
-      margin-top: -170px;
-      padding-left: 30px;
-      /* justify-content: center;
-      align-items: center; */
+      display: flex;
+      /* margin-top: -170px; */
+      padding: auto;
+      justify-content: center;
+      align-items: center;
       /* background-color: rgb(170, 221, 223);
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
@@ -49,9 +49,10 @@
 
     .container {
       position: relative;
-      width: 80%;
+      width: 70%;
       min-height: 400px;
-      padding-left: 20px;
+      padding-left: 6px;
+      padding-right: 0px;
       background-color: rgb(170, 221, 223);
       display: flex;
       justify-content: center;
@@ -67,7 +68,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      padding: 5px;
+      padding: 0px;
       /* border: 2px solid black; */
     }
 
@@ -151,11 +152,11 @@
       padding-left: 30px;
     } */
 
-    .form .alert1 {
-      width: 100%;
-      margin-left: 170px;
-      margin-bottom: -20px;
-      padding-top: 5px;
+    .alert {
+      height: fit-content;
+      /* margin-left: 170px;
+      margin-bottom: -20px; */
+      padding: auto;
       font-weight: bold;
       color: rgb(228, 42, 42);
     }
@@ -190,13 +191,13 @@
       cursor: pointer;
       /* color: aliceblue; */
       padding: 10px 20px;
-      margin-top: 15px;
+      margin-top: 20px;
       text-transform: uppercase;
       letter-spacing: 1.2px;
       opacity: 0.8;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       font-weight: 600;
-      margin-left: 230px;
+      margin-left: 20px;
       transition: 0.3s;
     }
 
@@ -229,21 +230,23 @@
         overflow: hidden;
         display: block;
         background-color: aliceblue;
+        justify-content: center;
       }
 
       section {
-        padding-top: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        /* min-height: 100vh; */
+        border: 1px solid black;
         background-color: aliceblue;
       }
 
       .box {
         position: relative;
-        /* display: flex; */
-        margin-top: -170px;
+        display: flex;
+        /* margin-top: -170px; */
+        padding: auto;
         justify-content: center;
         align-items: center;
         /* background-color: rgb(170, 221, 223);
@@ -253,18 +256,18 @@
 
       .container {
         position: relative;
-        width: 100%;
+        width: 75%;
         min-height: 400px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
         background-color: rgb(170, 221, 223);
         display: flex;
-        /* justify-content: center;
-        align-items: center; */
-        /* overflow-x: hidden; */
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
         border-radius: 8px;
         backdrop-filter: blur(5px);
-        /* border-radius: 10px; */
+        border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       }
       .form {
@@ -313,7 +316,7 @@
         <li class="breadcrumb-item active" aria-current="page">Register</li>
       </ol>
     </nav>
-    <p align="end" style="padding-right: 235px; padding-bottom: 3px;"><button type="button" onclick="home()" class="btn-close" aria-label="Close"></button></p>
+    <p align="center"><button type="button" onclick="home()" class="btn-close border" aria-label="Close"></button></p>
       <script>
         function home() {
           window.location.href = '/';
@@ -374,18 +377,19 @@
                 </div>
               </div>
             </div>
+            <!-- <div class="alert alert-{{ message.tags }} border" role="alert" style="padding: 5px; margin-left: 150px; margin-bottom: -36px;">
+              *<small>Passwords do not match</small>
+            </div> -->
             {% if messages %}
             {% for message in messages %}
-            <div class="alert1">
-              <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              <div class="alert alert-{{ message.tags }}" role="alert" style="padding: 5px; margin-left: 150px; margin-bottom: -36px;">
                 *<small>{{ message }}</small>
               </div>
-            </div>
             {% endfor %}
             {% endif %}
             <!-- <div class="inputbox3">
           <input type="checkbox">   I agree to Terms and Conditions and Privacy Policy</div> -->
-            <div class="inputbox2">
+            <div class="inputbox2" style="margin: 0px 340px 0px 0px;">
               <input type="submit" value="Register">
             </div>
             <!-- </div> -->

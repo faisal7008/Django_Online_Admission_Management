@@ -37,7 +37,7 @@
     }
     .container{
       position: relative;
-      width: 35%;
+      width: 30%;
       min-height: 100px;
       background-color:  rgb(170, 221, 223);     /*rgb(244, 142, 247);*/
       display: flex;
@@ -55,7 +55,7 @@
     } */
     .form{
       position: relative;
-      width: 100%;
+      width: 96%;
       height: 100%;
       padding: 40px 10px;
     }
@@ -126,7 +126,7 @@
     .forget a{
       font-weight: 600;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       *{                
         margin: 0;
         padding: 0;
@@ -142,7 +142,7 @@
         display: block;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        /* min-height: 100vh; */
       }
       .box{
         position: relative;
@@ -179,7 +179,7 @@
       </ol>
     </nav>
     <div class="box">
-      <p align="end" class="close-button" style="padding-right: 280px; padding-bottom: 8px; margin-bottom: 2px;"><button type="button" onclick="home()" class="btn-close" aria-label="Close"></button></p>
+      <p align="center" class="close-button"><button type="button" onclick="home()" class="btn-close border" aria-label="Close"></button></p>
       <script>
         function home() {
           window.location.href = '/';
