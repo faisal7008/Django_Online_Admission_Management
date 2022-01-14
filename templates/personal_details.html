@@ -4,19 +4,26 @@
 
 {% block Personal_details %}
 
+<style>
+    .row{
+        width: 80%;
+    }
+</style>
+
 {% if user.application.user %}
     
 <h3>Personal Details</h3><hr>
-  <div class="photo" style="margin-left: 600px; padding-right: 10px; margin-bottom: -235px;">
+  <div class="photo">
+    <!-- style="margin-left: 600px; padding-right: 10px; margin-bottom: -235px;" -->
     <div class="img">
-        <p align="end"><img src="{{application.student_profile.url}}" height="193px" width="150px" alt="img" style="border: 2px solid #555;"></p>
+        <p align="center"><img src="{{application.student_profile.url}}" height="193px" width="150px" alt="img" style="border: 2px solid #555;"></p>
       </div><br>
   </div>
   <div class="row">
       <div class="col-md-3">
         <label for="course" class="form-label">Application ID :</label>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-5">
         <p style="font-size: large;"><strong>{{id}}</strong></p>
       </div>
   </div>
@@ -76,7 +83,6 @@
           <p>{{application.address}}</p>
       </div>
   </div>
-
 
 {% else %}
     <div class="container">
