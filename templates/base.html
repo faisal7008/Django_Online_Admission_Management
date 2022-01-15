@@ -19,6 +19,8 @@
 
     html {
       scroll-behavior: smooth;
+      height: 100%;
+      min-height: 100%;
     }
 
     header{
@@ -60,7 +62,8 @@
       /* background-color: #04AA6D; */
     }
     body {
-      height: auto;
+      height: 100%;
+      min-height: 100%;
       padding: auto;
       overflow: visible;
       overflow-x: hidden;
@@ -133,7 +136,7 @@
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" style="padding-top: 1px; padding-bottom: 1px;">
             {% if user.is_superuser %}
             <li><a class="dropdown-item" href="/handle_admin/">
-              <span style="vertical-align: middle;"><i class='bx bx-user-circle bx-sm' style="padding-right: 3px;"></i></span> Admin</a>
+              <span style="vertical-align: middle;"><i class='bx bx-user-circle bx-sm' style="padding-right: 5px;"></i></span> Admin</a>
             </li>
             {% endif %}
             {% if not user.is_superuser %}
@@ -149,12 +152,12 @@
             </li>
             {% if user.is_superuser %}
             <li><a class="dropdown-item" href="/contacts/">
-              <span style="vertical-align: middle;"><i class='bx bx-phone bx-sm' style="padding-right: 5px;"></i></span>Contacts</a>
+              <span style="vertical-align: middle;"><i class='bx bx-phone bx-sm' style="padding-right: 5px;"></i></span> Contacts</a>
             </li>
             {% endif %}
-            <li style="margin-left: 7%;"><hr class="dropdown-divider" style="margin-top: 2px; margin-bottom: 2px; width: 93%;"></li>
+            <!-- <li style="margin-left: 7%;"><hr class="dropdown-divider" style="margin-top: 2px; margin-bottom: 2px; width: 93%;"></li> -->
 
-            <li><a class="dropdown-item" href="/sign_out/">
+            <li><a class="dropdown-item" href="/sign_out/" style="border-top: 0.5px solid #eee;">
               <span style="vertical-align: middle;"><i class='bx bx-log-out bx-sm' style="padding-right: 5px;"></i></span> Logout</a>
             </li>
           </ul>
