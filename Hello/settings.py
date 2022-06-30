@@ -100,7 +100,8 @@ DATABASES['default'].update(db_from_env)                #
 
 
 WHITENOISE_USE_FINDERS = True       # Added manually
-
+SCM_DO_BUILD_DURING_DEPLOYMENT = True
+DEBUG_PROPAGATE_EXCEPTIONS = True 
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
