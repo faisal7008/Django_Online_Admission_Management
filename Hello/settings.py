@@ -95,9 +95,8 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=600)  # added manually
+DATABASES['default'].update(db_from_env)                #
 
 
 WHITENOISE_USE_FINDERS = True       # Added manually
@@ -153,8 +152,8 @@ MEDIA_URL = '/media/'                   # Added manually
 
 
 #New start
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #New End
 
