@@ -14,12 +14,103 @@
     height: 100px;
     width: 200px;
 }  
+section{
+  width: 100%;
+  margin: auto;
+}
+
+.row{
+  margin: auto;
+}
+
+.col-lg-3{
+   /* border: 1px solid #000;     */
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  /* margin: auto; */
+  /* padding: auto; */
+}
+
 </style>
 {% endblock %}
 {% block body %}
 
-<div class="container my-5" style="width: 60%;">
-  <div class="row">
+
+
+<!-- <div class="container my-5" style="width: 100%;"> -->
+
+  <section>
+    <div class="row justify-content-center" style="height: 30vh;">
+      
+      <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="fas fa-pencil-alt text-info fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <h3>{{users}}</h3>
+                <a class="mb-0" href="/pending_users/" style="color: #555;">All Applications</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="fas fa-check text-info fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <h3>{{approve}}</h3>
+                <a class="mb-0" href="/pending_users/" style="color: #555;">Approved Applications</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" style="height: 30vh;">
+      <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="fas fa-circle-notch text-info fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <h3>{{pending}}</h3>
+                <a class="mb-0" href="/pending_users/" style="color: #555;">Pending Applications</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between px-md-1">
+              <div class="align-self-center">
+                <i class="fas fa-times text-info fa-3x"></i>
+              </div>
+              <div class="text-end">
+                <h3>{{reject}}</h3>
+                <a class="mb-0" href="/pending_users/" style="color: #555;">Rejected Applications</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+
+  <!-- <div class="row">
     <div class="col-md-6">
       <button type="button" class="btn btn-success position-relative" onclick="document.location='/allusers/'" style="padding: 40px 60px; font-size: 20px;">
         All Applications
@@ -58,7 +149,7 @@
         </span>
       </button>
     </div>
-  </div>
-</div>
+  </div> -->
+<!-- </div> -->
 
 {% endblock %}
