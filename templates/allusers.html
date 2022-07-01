@@ -13,10 +13,6 @@
         border-collapse: collapse;
     }
 
-    table, th, td {
-        border: 1px solid black;
-    }
-
     tbody tr td:first-child:before {
         counter-increment: Serial;
         content: counter(Serial);
@@ -25,7 +21,7 @@
 {% endblock style %}
 
 {% block body %}
-<nav aria-label="breadcrumb" style="padding-left: 10px; font-family: 'Poppins', sans-serif;">
+<nav aria-label="breadcrumb" style="padding-left: auto; font-family: 'Poppins', sans-serif;">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/handle_admin/">Admin</a></li>
         <li class="breadcrumb-item active" aria-current="page">All Applications</li>
@@ -34,8 +30,8 @@
 
 <div class="container" style="padding-bottom: 50px;">
     <h2 style="font-family: 'Poppins', sans-serif;">All Applications</h2><br>
-    <table class="table table-success table-striped" id="myTable">
-        <thead>
+    <table class="table table-light" id="myTable">
+        <thead class="table-dark">
             <tr style="cursor:pointer">
                 <th scope="col" onclick="sortTable(0);">S No.</th>
                 <th scope="col" onclick="sortTable(1);">Applicant Name</th>
@@ -57,6 +53,7 @@
         </tbody>
     </table>
 </div>
+<br>
 <br>
 
 <script>

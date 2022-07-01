@@ -12,10 +12,10 @@
     table {
         border-collapse: collapse;
     }
-    
+{% comment %}     
     table, th, td {
         border: 1px solid black;
-    }
+    } {% endcomment %}
 
     tbody tr td:first-child:before {
         counter-increment: Serial;
@@ -32,11 +32,11 @@
     </ol>
 </nav>
 
-<div class="container" style="padding-bottom: 50px;">
+<div class="container" style="padding-bottom: auto;">
 
     <h2 style="font-family: 'Poppins', sans-serif;">Pending Applications</h2><br>
-    <table class="table table-success table-striped" id="myTable">
-        <thead>
+    <table class="table table-light" id="myTable">
+        <thead class="table-dark">
             <tr style="cursor:pointer">
                 <th scope="col" onclick="sortTable(0);">S No.</th>
                 <th scope="col" onclick="sortTable(1);">Applicant Name</th>
@@ -60,6 +60,7 @@
         </tbody>
     </table>
 </div>
+<br>
 <br>
 
 <script>
