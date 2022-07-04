@@ -124,6 +124,7 @@
   {% block style %}{% endblock style %}
   <title>{% block title %}{% endblock title %} | CBIT</title>
 </head>
+
 <header>
 
   <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" style="width: 100%;">
@@ -141,10 +142,10 @@
                 <img class="me-2"
                   height="auto" src="/media/cbit-logo.png" alt=""
                     style="width: 52px;">
-                <span style="font-size: 22px;"> Chaitanya Bharathi Institute of Technology (A) <br>
+                <span style="font-size: 22px; width: 100%;"> Chaitanya Bharathi Institute of Technology (A) <br>
                   <h1 style="font-size:15px;"> Affiliated to Osmania University</h1>
                 </span>
-                </strong></a>
+              </a>
             <div class="d-flex">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-right: auto;">
               <li class="nav-item">
@@ -226,17 +227,20 @@
 
 <body>
   {% block carousal %}{% endblock %}
-  <!-- <div class="container">
-  {% if messages %}
-  {% for message in messages %}
-  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-    <strong>{{ message }}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-  {% endfor %}
-  {% endif %}
-</div> -->
   <br>
+
+<!-- <div class="loading d-flex align-items-center justify-content-center">
+  <div class="spinner-grow text-danger" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div> -->
+
   {% block body %}{% endblock body %}
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -249,6 +253,7 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
@@ -280,7 +285,5 @@
   </div>
   <!-- Copyright -->
 </footer>
-<!-- </div>
-</footer> -->
 
 </html>
