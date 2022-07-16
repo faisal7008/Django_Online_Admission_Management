@@ -1,4 +1,17 @@
-useful cmds
+To run the project:
+1. Create a virual environment and activate it.
+2. Run cmd "pip install requirements.txt".
+3. Go to directory where manage.py is located.
+4. Now run "python manage.py runserver".
+
+
+
+
+
+
+
+
+Some useful cmds for deployment
 
 git remote -v
 git add .
