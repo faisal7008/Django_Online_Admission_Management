@@ -4,7 +4,7 @@ To run the project:
 3. Go to directory where manage.py is located.
 4. Now run "python manage.py runserver".
 
-
+To open website go to http://127.0.0.1:8000/
 
 
 
