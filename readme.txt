@@ -1,3 +1,5 @@
+# Django Online Admission Management System
+
 To run the project:
 1. Create a virual environment and activate it.
 2. Run cmd "pip install requirements.txt".
